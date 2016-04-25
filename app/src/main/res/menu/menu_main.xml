@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.odintao.loveandmiss.FirstActivity">
+
+    <item android:id="@+id/action_other_app" android:title="@string/other_app"></item>
+    <item android:id="@+id/action_share_app" android:title="@string/share_app"></item>
+</menu>

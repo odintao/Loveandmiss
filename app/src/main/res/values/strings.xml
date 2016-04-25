@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">รักและคิดถึง</string>
+    <!-- TODO Production change to Y -->
+    <string name="production">N</string>
+    <string name="ban_ad_unit_id">ca-app-pub-3148913314816688/8462262850</string>
+    <string name="popup_ad_unit_id">ca-app-pub-3148913314816688/9938996055</string>
+
+    <string name="share_app_friend">แนะนำแอปนี้ให้กับเพื่อนโดย </string>
+    <string name="share_app_friend_detail">ดาวน์โหลดแอป "รักและคิดถึง" ฟรีที่ google play  \n https://play.google.com/store/apps/details?id=com.odintao.loveandmiss </string>
+    <string name="share_url_app">https://play.google.com/store/apps/details?id=com.odintao.loveandmiss </string>
+    <string name="share_img_folder">IMGLove_Miss</string>
+    <string name="bt_yes">ใช่</string>
+    <string name="bt_no">ไม่ใช่</string>
+    <string name="btn_rate">ให้คะแนน </string>
+    <string name="bt_ch">กดเลือกประเภทคำอวยพร</string>
+    <string name="bt_share">ส่งต่อให้เพื่อน</string>
+    <string name="action_quite">คุณต้องการจะออกจากโปรแกรมใช่หรือมไม่ </string>
+    <string name="favorite_not_exists">โปรดเลือกชนิดคำอวยพร</string>
+    <string name="title_share_program">แชร์รูปภาพโดย:</string>
+    <string name="network_title">เครือข่ายอินเตอร์เน็ตมีปัญหา</string>
+    <string name="network_not_con">เครือข่ายอินเตอร์เน็ตมีปัญหา โปรดตรวจสอบว่าท่านได้เปิดการติดต่อกับอินเตอร์เน็ตแล้ว</string>
+
+    <string name="other_app">แอปอื่นๆ จากเรา</string>
+    <string name="share_app">แนะนำแอปนี้ให้กับเพื่อน </string>
+    <string name="load_data">กำลังโหลดข้อมูล</string>
+    <string name="load_data_head">โหลดข้อมูล</string>
+</resources>

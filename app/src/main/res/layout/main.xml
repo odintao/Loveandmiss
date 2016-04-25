@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/bt_ch"
+        android:visibility="gone"
+        android:typeface="normal"
+        android:padding="5dp"
+        android:background="#4c4ffb"
+        style="@android:style/Holo.ButtonBar" />
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView"
+        android:layout_below="@+id/btnFavorite"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:numColumns="1"
+        android:horizontalSpacing="2dip"
+        android:verticalSpacing="2dip"
+        android:columnWidth="150dip"
+        android:stretchMode="columnWidth"
+        >
+
+    </GridView>
+
+<com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ban_ad_unit_id"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+    >
+</com.google.android.gms.ads.AdView>
+
+
+  </RelativeLayout>

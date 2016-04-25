@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBG_pink">#FFCCE5</color>
+    <color name="colorBG_orange">#f6ab56</color>
+    <color name="colorBG_orange2">#f8e0b0</color>
+    <color name="grid_state_pressed">#BB7dbcd3</color>
+    <color name="grid_state_focused">#777dbcd3</color>
+    <color name="blue">#ff0099cc</color>
+    <color name="blue2">#BB7dbcd3</color>
+</resources>

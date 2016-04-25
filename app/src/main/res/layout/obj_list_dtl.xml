@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="1dp" >
+
+    <!-- 
+    <ImageView
+        android:id="@+id/grid_item_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+       android:gravity="center_vertical|center_horizontal"
+        android:src="@drawable/ic_action_play_over_video" >
+    </ImageView>
+  -->
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/grid_item_image_dtl"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/grid_item_label_dtl"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@+id/grid_item_image_dtl"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+    </TextView>
+
+
+
+    <TextView
+        android:id="@+id/txtListGame_dtl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/grid_item_label_dtl"
+        android:layout_toRightOf="@+id/grid_item_label_dtl"
+        android:gravity="center_vertical"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtUrl_dtl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/grid_item_label_dtl"
+        android:layout_toRightOf="@+id/grid_item_label_dtl"
+        android:gravity="center_vertical"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="gone" />
+    <!-- 
+ <Button
+          android:id="@+id/imgBtnUnFavorite"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_below="@+id/grid_item_label_dtl"
+          android:layout_gravity="bottom|center"
+          android:layout_marginLeft="30dp"          
+          android:src="@drawable/action_search"
+          android:text="Button" />
+   -->
+
+</RelativeLayout>
