@@ -18,8 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.odintao.adapter.ShowListImgAdapter;
 import com.odintao.java.MySingleton;
 import com.odintao.model.Movie;
@@ -36,7 +38,9 @@ public class ShowListImgActivity extends Activity {
 
     // Log tag
     private static final String TAG = ShowListImgActivity.class.getSimpleName();
-
+    InterstitialAd interstitial;
+    boolean isFirstTime = true;
+    String objImgUrl;
     // Movies json url
 //    private static final String url = "http://lovedesigner.net/feed/json";
     private static final String url = "http://www.odintao.com/android/loveandmiss/filesphp/php_love_get_list_img.php?ilist=";
@@ -103,17 +107,27 @@ public class ShowListImgActivity extends Activity {
                                     int position, long id) {
 
                 TextView c = (TextView) v.findViewById(R.id.txtUrl_dtl);
-                String objImgUrl = c.getText().toString();
-                Intent intent = new Intent(getApplicationContext(),
-                        ShowImgActivity.class);
-                intent.putExtra("objImgUrl", objImgUrl);
-                intent.putExtra("allobjImg", allobjImg);
-                startActivity(intent);
+                objImgUrl = c.getText().toString();
+                if(isFirstTime){
+                    // load first time show popup
+                    displayInterstitial();
+                }else{
+                    nextLevel();
+                }
+
+//                TextView c = (TextView) v.findViewById(R.id.txtUrl_dtl);
+//                String objImgUrl = c.getText().toString();
+//                Intent intent = new Intent(getApplicationContext(),
+//                        ShowImgActivity.class);
+//                intent.putExtra("objImgUrl", objImgUrl);
+//                intent.putExtra("allobjImg", allobjImg);
+//                startActivity(intent);
             }
         });
 
         //Todo load admob
         showAd();
+        showAdPopup();
     }
     @Override
     public void onDestroy() {
@@ -184,4 +198,66 @@ public class ShowListImgActivity extends Activity {
             showAdTest();
         }
     }
+
+    private void showAdPopup()
+    {
+
+        // Create the interstitial.
+        interstitial = new InterstitialAd(getApplicationContext());
+        interstitial.setAdUnitId(getResources().getString(R.string.popup_ad_unit_id));
+        // Create an ad request.
+        AdRequest.Builder adRequest2 = new AdRequest.Builder();
+        if (getResources().getString(R.string.production).equalsIgnoreCase("N")) {
+ 	/* ************  for test only ************************
+ 	adRequest2.addTestDevice(AdRequest.DEVICE_ID_EMULATOR);
+ 	****************************************************** */
+            adRequest2.addTestDevice("B695E9C704D69B46BDDB734DDA56673B");
+        }
+
+
+        interstitial.loadAd(adRequest2.build());
+        // Set an AdListener.
+        interstitial.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                super.onAdFailedToLoad(errorCode);
+//                closeApplication();
+            }
+
+            public void onAdLoaded() {
+//				displayInterstitial();
+            }
+
+            @Override
+            public void onAdClosed() {
+                isFirstTime = false;
+                nextLevel();
+            }
+
+        });
+    }
+    public void nextLevel(){
+
+        Intent intent = new Intent(getApplicationContext(),
+                ShowImgActivity.class);
+        intent.putExtra("objImgUrl", objImgUrl);
+        intent.putExtra("allobjImg", allobjImg);
+        startActivity(intent);
+    }
+
+    public void displayInterstitial() {
+        // Show the interstitial if it is ready. Otherwise, proceed to the next level
+        // without ever showing it.
+        if (interstitial != null) {
+            if(interstitial.isLoaded()){
+                interstitial.show();
+            }else{
+               nextLevel();
+            }
+        } else {
+           nextLevel();
+
+        }
+    }
+
 }

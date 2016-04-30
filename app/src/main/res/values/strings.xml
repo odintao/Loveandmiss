@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">รักและคิดถึง</string>
     <!-- TODO Production change to Y -->
-    <string name="production">N</string>
+    <string name="production">Y</string>
     <string name="ban_ad_unit_id">ca-app-pub-3148913314816688/8462262850</string>
     <string name="popup_ad_unit_id">ca-app-pub-3148913314816688/9938996055</string>
 

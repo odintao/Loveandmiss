@@ -255,7 +255,7 @@ public class FirstActivity extends  Activity {
 //      showAdPopup();
 //        ****** del of policy
 //        displayInterstitial();
-
+                closeApplication();
             }
 
         });
